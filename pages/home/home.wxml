@@ -1,0 +1,2 @@
+<!--pages/home/home.wxml-->
+<view class="iconfont icon-weizhi"  > {{ location }}</view>
