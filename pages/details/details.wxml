@@ -1,0 +1,11 @@
+<view class="one" >
+	<block wx:for="{{week}}" wx:for-index="idx" wx:for-item="weekName" wx:key="index">
+    {{weekName.Mon}}
+		{{weekName.Tues}}
+		{{weekName.Wed}}
+		{{weekName.Thur}}
+		{{weekName.Fri}}
+		{{weekName.Sat}}
+		{{weekName.Sun}}
+	</block>
+</view>

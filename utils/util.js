@@ -1,3 +1,4 @@
+//查看启动日志  日期：年月日
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1

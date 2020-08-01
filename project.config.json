@@ -31,9 +31,9 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.12.0",
-	"appid": "wx4f23e2f2fddb1dd8",
-	"projectname": "X-weather",
+	"libVersion": "2.0.4",
+	"appid": "wxb36089762defdc39",
+	"projectname": "XN",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

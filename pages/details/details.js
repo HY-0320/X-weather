@@ -1,11 +1,19 @@
-// pages/page1/page1.js
+// pages/details/details.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    week:[
+      {Mon:"周一"},
+      {Tues:"周二"},
+      {Wed:"周三"},
+      {Thur:"周四"},
+      {Fri:"周五"},
+      {Sat:"周六"},
+      {Sun:"周日"}
+    ]
   },
 
   /**

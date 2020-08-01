@@ -1,0 +1,50 @@
+<view class="localAll">
+	<view class="one">
+		<view class="oneOne">
+			<view class="iconfont icon-tubiao-"></view>
+		</view>
+		<input type="submit" placeholder="搜索" />
+	</view>
+	<view class="two">
+		<text>推荐城市</text>
+	</view>
+
+	<view class="three">
+		<view class="threeOne">
+			{{localOne}}
+		</view>
+		<view class="threeTwo">
+			{{localTwo}}
+		</view>
+		<view class="threeThree">
+			{{localThree}}
+		</view>
+		<view class="threeFour">
+			{{localFour}}
+		</view>
+		<view class="threeFive">
+			{{localFive}}
+		</view>
+		<view class="threeSix">
+			{{localSix}}
+		</view>
+		<view class="threeSeven">
+			{{localSeven}}
+		</view>
+		<view class="threeEghit">
+			{{localEghit}}
+		</view>
+		<view class="threeNine">
+			{{localNine}}
+		</view>
+		<view class="threeTen">
+			{{localTen}}
+		</view>
+		<view class="threeEleven">
+			{{localEleven}}
+		</view>
+		<view class="threeTwelve">
+			{{localTwelve}}
+		</view>
+	</view>
+</view>

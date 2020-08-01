@@ -1,0 +1,5 @@
+/* pages/details/details.wxss */
+.one{
+  display: inline;
+  padding-left:40px;
+}

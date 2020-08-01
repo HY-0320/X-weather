@@ -1,2 +1,61 @@
-<!--pages/home/home.wxml-->
-<view class="iconfont icon-weizhi"  > {{ location }}</view>
+<!--pages/Home/Home.wxml-->
+<view class="homeAll">
+<!-- 主页面第一栏 -->
+	<view class="mStyle" bindtap="bindViewTap">
+		<view class="iconfont icon-weizhi"> {{local}}</view>
+	</view>
+	<!-- 主页面第二栏 -->
+	<view class="mFirst" bindtap="bindViewTapOne">
+		<form>{{temp}}</form>
+	</view>
+	<!-- 主页面第三栏 -->
+	<view class="mSecond">
+		<form>{{high}}/{{low}}</form>
+	</view>
+	<!-- 主页面第四栏 -->
+	<view class="mThird">
+		<form>{{weather}} {{aQuality}}</form>
+	</view>
+	<!-- 主页面第五栏 -->
+	<view class="mFour">
+		<view wx:for="{{infor}}" wx:for-index="idx" wx:for-item="itemName" wx:key="index">
+			{{itemName.eTime}}
+			{{itemName.eLog}}
+			{{itemName.eHlow}}
+		</view>
+	</view>
+	<!-- 空气质量百分比图 -->
+	<canvas style="width:150px; height:150px;" canvas-id="firstCanvas" class="mFifth">
+		空气质量
+	</canvas>
+	<view class="mSix">
+		<view>
+			PM2.5{{num1}}
+		</view>
+		<view>
+			CO {{num2}}
+		</view>
+		<view>
+
+		</view>
+	</view>
+	<!-- 空气湿度百分比图 -->
+	<canvas style="width:150px; height:150px; " canvas-id="secondCanvas" class="mSeven">
+		舒适度
+	</canvas>
+	<view class="mEghit">
+		<view>
+			体感温度 {{num3}}
+		</view>
+		<view>
+			紫外线指数 {{num4}}
+		</view>
+		<view>
+
+		</view>
+	</view>
+		<!-- 温馨提示按钮-->
+	<view class="mNinth">
+		<button class="mNinthOne">来自仙女的温馨提示</button>
+	</view>
+</view>
