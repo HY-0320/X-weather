@@ -7,7 +7,7 @@
 }
 
 .mStyle {
-  margin-left: 90px;
+  margin-left: 28.2%;
   width: 150px;
   height: 32px;
   /* background-color: aqua; */
@@ -46,65 +46,73 @@
 }
 .mFour{
   /* background-color: violet; */
-  width: 250px;
-  height: 160px;
-  padding-top: 10px;
-  padding-bottom: 2.5px;
+  width: 78.2%;
+  height: 35.8%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   border-top-style: solid;
   border-top-width: 1px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  margin-top: 25px;
-  margin-left: 40px;
+  margin-top: 4.96%;
+  margin-left: 14%;
   text-align: center;
   color: aliceblue;
+  /* background-color: blue; */
 }
 /* .mFourone{
   width: 20px;
   height: 25px;
   background-color: slateblue;
 } */
+.insert{
+  width: 100%;
+  height: 350px;
+  /* padding-left: 12%; */
+  padding-top: 5%;
+  padding-left: 5px;
+  /* background-color: blue; */
+
+}
 .mFifth{
   /* border-top-style: solid;
   border-top-width: 1px; */
   margin-top: 30px;
-  margin-left: 30px;
+  margin-left: 9.4%;
   font-size:13px;
   color: aliceblue;
   float: left;
 }
 .mSix{
   margin-top: 30px;
-  margin-left: 155px;
+  margin-left: 48.44%;
   /* background-color: blue; */
+  /* 155px */
   padding-top: 60px;
   font-size: 13px;
-  width: 150px;
+  width: 46.875%;
   height: 90px;
   text-align: center;
   color: aliceblue;
 }
 .mSeven{
   margin-top: 5px;
-  margin-left: 30px;
+  margin-left: 9.4%;
   font-size:13px;
   color: aliceblue;
   float: left;
 }
 .mEghit{
   margin-top: 5px;
-  margin-left: 155px;
+  margin-left: 48.44%;
   padding-top: 60px;
   /* background-color: blue; */
   font-size: 13px;
-  width: 150px;
+  width: 46.875%;
   height: 90px;
   text-align: center;
   color: aliceblue;
   /* float: inline-start ; */
-}
-.mNinth{
-   /* background-color: snow; */
 }
 .mNinthOne{
   margin-top: 10px;

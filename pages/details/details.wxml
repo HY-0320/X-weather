@@ -1,11 +1,20 @@
-<view class="one" >
-	<block wx:for="{{week}}" wx:for-index="idx" wx:for-item="weekName" wx:key="index">
-    {{weekName.Mon}}
-		{{weekName.Tues}}
-		{{weekName.Wed}}
-		{{weekName.Thur}}
-		{{weekName.Fri}}
-		{{weekName.Sat}}
-		{{weekName.Sun}}
-	</block>
+<view class="table">
+	<view class="tr">
+		<view class="th">周日</view>
+		<view class="th">周一</view>
+		<view class="th">周二</view>
+		<view class="th">周三</view>
+		<view class="th">周四</view>
+		<view class="th">周五</view>
+		<view class="th">周六</view>
+	</view>
+  	<view class="tr">
+		<view class="td">周</view>
+		<view class="td">周</view>
+		<view class="td">周</view>
+		<view class="td">周</view>
+		<view class="td">周</view>
+		<view class="td">周</view>
+		<view class="td">周</view>
+	</view>
 </view>
