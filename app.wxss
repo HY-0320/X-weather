@@ -1,7 +1,9 @@
 /**app.wxss**/
 @import './assets/ICONFIG/Icon.wxss';
 @import './assets/ICONFIG/serach.wxss';
-/* @import "colorui/main.wxss"; */
+@import './assets/ICONFIG/local.wxss';
+@import './assets/ICONFIG/return.wxss';
+
 .container {
   height: 100%;
   display: flex;

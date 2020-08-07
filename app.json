@@ -1,19 +1,19 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/locals/locals",
-    "pages/Home/Home",
-    "pages/details/details"
+    "pages/news/news",
+    "pages/show/show"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "default"
+    "navigationStyle": "custom"
   },
-  "usingComponents": {
-  },
+  "usingComponents": {},
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

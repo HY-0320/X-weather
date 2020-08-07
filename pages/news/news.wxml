@@ -1,0 +1,46 @@
+  <!-- <view class="all"> -->
+  <view class="navi" bindtap="navigatorTo">
+  	<view class="iconfont icon-weizhi1">{{locals}}</view>
+  </view>
+	<view class="util">xxx</view>
+  <view class="root">
+  	<!-- 固定区域 -->
+  	<view class="mainTitle">
+  		<view class="currentWeatherInformation">
+  			<p class="temp">{{currentTemperature}}</p>
+  			<p class="weather">{{weather}}</p>
+  		</view>
+  	</view>
+  	<!-- 自适应区域 -->
+  	<view class="daysWeather">
+  		<view class="yesterday">
+  			<text>24℃/29℃</text>
+  			<text>昨天.中雨</text>
+  		</view>
+  		<view class="today">
+  			<text>24℃/29℃</text>
+  			<text>今天.中雨</text>
+  		</view>
+  		<view class="tommorow">
+  			<text>24℃/29℃</text>
+  			<text>明天.中雨</text>
+  		</view>
+  	</view>
+  	<view class="Percentage ">
+  		<view class="airMassPercentage">
+  		</view>
+  		<view class="comfortPercentage">
+  		</view>
+  	</view>
+  	<view class="tipsBox">
+  		<view class="tips">
+  		</view>
+  	</view>
+  </view>
+  <!-- </view> -->
+
+  <!-- <view class="xye">
+   <view>xxx</view>
+	 <view>yyy</view>
+	 <view>www</view>
+</view> -->

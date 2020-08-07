@@ -1,26 +1,26 @@
-// pages/details/details.js
+// pages/news/news.js
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    currentTemperature: "29℃",
+    weather: "中雨 . 空气优",
+    locals: "西安"
   },
 
-
+  navigatorTo: function () {
+    wx.navigateTo({
+      url: '../show/show',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-        
+
   },
 
   /**
