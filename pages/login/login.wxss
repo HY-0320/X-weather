@@ -41,7 +41,7 @@ page{
   justify-content: center;
   width: 300rpx;
   height: 300rpx;
-  background-color: rgb(225, 215, 243);
+  background-color: rgb(243, 242, 244);
   align-items: center;
   border-radius: 50%;
 }
