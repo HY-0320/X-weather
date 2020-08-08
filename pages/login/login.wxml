@@ -1,4 +1,26 @@
-<view wx:if="{{isHide}}">
+<view class="padding"></view>
+<view class="root">
+	<view class="first">
+		<view class="image">
+			<image src='../../image/logo.jpg'></image>
+		</view>
+		<view class="homeText">
+    <view></view>
+			<text class="textTitle">申请获取以下权限</text>
+			<text class="text">获得您的公开信息(昵称,头像等)</text>
+			<text class="text">获得您的位置信息</text>
+		</view>
+	</view>
+	<view class="second">
+		<view class="button">
+			<button class='buttonStyle' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="bindGetUserInfo">
+				授权登录
+			</button>
+		</view>
+	</view>
+</view>
+
+<!-- <view wx:if="{{isHide}}">
   <view wx:if="{{canIUse}}">
     <view class='header'>
        <image src='../../image/logo.jpg'></image>
@@ -13,4 +35,4 @@
     </button>
   </view>
   <view wx:else>请升级微信版本</view>
-</view>
+</view> -->

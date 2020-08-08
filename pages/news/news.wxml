@@ -2,7 +2,7 @@
   <view class="navi" bindtap="navigatorTo">
   	<view class="iconfont icon-weizhi1">{{locals}}</view>
   </view>
-	<view class="util">xxx</view>
+  <view class="util">xxx</view>
   <view class="root">
   	<!-- 固定区域 -->
   	<view class="mainTitle">
@@ -28,8 +28,13 @@
   	</view>
   	<view class="Percentage ">
   		<view class="airMassPercentage">
+  			<canvas style="width:500rpx; height:500rpx;" canvas-id="firstCanvas" class="mFifth">
+  				空气质量
+  			</canvas>
   		</view>
   		<view class="comfortPercentage">
+			<canvas>
+			</canvas>
   		</view>
   	</view>
   	<view class="tipsBox">

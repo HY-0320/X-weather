@@ -6,29 +6,46 @@ Page({
    */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    isHide: true
+    isHide: true,
   },
   bindGetUserInfo: function (e) {
-   console.log(e)
-   if(e.detail.userInfo){
-    wx.getLocation({
-      success(res){
-        console.log(res)
-      }
-    })
-    wx.getSetting({
-      success(res){
-        console.log(res)
-      }
-    })
-   }
+    console.log(e)
+    if (e.detail.userInfo) {
+      wx.navigateTo({
+        url: '../news/news',
+      })
+    }
+    else{
+      this.isHide = true
+      this.setData({
+        isHide:true
+      })
+    }
+      // wx.getLocation({
+      //   success(res) {
+      //     console.log(res)
+      //   }
+      // })
+      
+      // wx.getSetting({
+      //   success(res) {
+      //     console.log(res)
+      //     if (res.detail) {
+      //       that.setData({
+      //         isHide: "false"
+      //       })
+          
+
+      //     }
+      //   }
+      // })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
-    
+
 
 
   },
