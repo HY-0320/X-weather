@@ -21,11 +21,12 @@ Page({
         isHide:true
       })
     }
-      // wx.getLocation({
-      //   success(res) {
-      //     console.log(res)
-      //   }
-      // })
+      wx.getLocation({
+        type: 'wgs84',
+        success(res) {
+          console.log(res)
+        }
+      })
       
       // wx.getSetting({
       //   success(res) {

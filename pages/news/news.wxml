@@ -6,6 +6,9 @@
   <view class="root">
   	<!-- 固定区域 -->
   	<view class="mainTitle">
+		  <view class="mainTitleStyle">
+				<image class="weatherIcon" src="../../image/yu.png"></image>
+			</view>
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}</p>
   			<p class="weather">{{weather}}</p>
@@ -28,13 +31,16 @@
   	</view>
   	<view class="Percentage ">
   		<view class="airMassPercentage">
-  			<canvas style="width:500rpx; height:500rpx;" canvas-id="firstCanvas" class="mFifth">
+  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(173, 200, 221); border-radius: 10px" canvas-id="firstCanvas" class="airPercentageTitleOne">
   				空气质量
   			</canvas>
   		</view>
   		<view class="comfortPercentage">
-			<canvas>
-			</canvas>
+  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(173, 200, 221); border-radius: 10px" canvas-id="secondCanvas" class="airPercentageTitleOne">
+  				空气湿度
+  			</canvas>
+  			<canvas>
+  			</canvas>
   		</view>
   	</view>
   	<view class="tipsBox">

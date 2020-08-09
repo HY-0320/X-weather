@@ -40,7 +40,17 @@ page{
   /* margin-top: 10rpx; */
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+.mainTitleStyle{
+  width: 400rpx;
+  height: 400rpx;
+  background-color: rgb(157, 205, 236);
+}
+.mainTitleStyle image{
+  width: 400rpx;
+  height: 400rpx;
 }
 .currentWeatherInformation{
   width: 300rpx;
@@ -101,6 +111,14 @@ page{
   height: 330rpx;
   background-color: white;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.airPercentageTitleOne{
+  font-size: 28rpx;
+  text-align: center;
+  color: rgb(250, 246, 246);
 }
 .tipsBox{
   display: flex;
