@@ -1,18 +1,18 @@
   <!-- <view class="all"> -->
-  <view class="navi" bindlongtap="navigatorTo" bindtap="getNowLocation">
+  <view class="navi" bindtap="navigatorTo">
   	<view class="iconfont icon-weizhi1">{{locals}}</view>
   </view>
   <view class="util">xxx</view>
   <view class="root">
   	<!-- 固定区域 -->
   	<view class="mainTitle">
-		  <view class="mainTitleStyle">
-				<image class="weatherIcon" src="../../image/yu.png"></image>
-			</view>
+  		<view class="mainTitleStyle">
+  			<image class="weatherIcon" src="../../image/yu.png"></image>
+  		</view>
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}</p>
   			<p class="weather">{{weather}}</p>
-				<p class="airMass">{{airMass}}</p>
+  			<p class="airMass">{{airMass}}</p>
   		</view>
   	</view>
   	<!-- 自适应区域 -->
@@ -48,4 +48,7 @@
   		<view class="tips">
   		</view>
   	</view>
+  	<mp-dialog title="X-weather" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
+  		<view>{{tips}}</view>
+  	</mp-dialog>
   </view>
