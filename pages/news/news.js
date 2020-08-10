@@ -2,11 +2,50 @@
 Page({
   data: {
     currentTemperature: "29℃",
-    weather: "中雨 . 空气优",
+    weather: "中雨",
+    airMass: "空气优",
     locals: "西安",
     startAngle: "", //开始位置弧度
     percentage: 10, //完成进度值 
     diffAngle: "" //完成进度弧度值
+  },
+  getNowLocation: function () {
+    // 引入SDK核心类
+    var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
+    // 实例化API核心类
+    var demo = new QQMapWX({
+      key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填
+    });
+    // 地理位置
+    var that = this;
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        const speed = res.speed
+        const accuracy = res.accuracy
+        // 调用接口转换成具体位置
+        demo.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (res) {
+            console.log(res.result);
+            console.log(res.address_component[0])
+            that.locals = "xxx"
+            that.setData({
+              locals: that.locals
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+          },
+        })
+      }
+    })
   },
 
   navigatorTo: function () {
@@ -17,13 +56,17 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  //空气质量-污染指数百分比绘制
+    //判断当前天气状况，以此来显示不同状态下的天气图标
+
+    //空气质量-污染指数百分比绘制
     var context = wx.createCanvasContext('firstCanvas')
     //一层圆圈绘制
     context.beginPath();
@@ -48,7 +91,7 @@ Page({
     context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw();
 
-//空气湿度-舒适度百分比绘制
+    //空气湿度-舒适度百分比绘制
     var context = wx.createCanvasContext('secondCanvas')
     //一层圆圈绘制
     context.beginPath();
@@ -77,7 +120,6 @@ Page({
     context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw()
   },
-
   /**
    * 生命周期函数--监听页面显示
    */

@@ -1,5 +1,5 @@
   <!-- <view class="all"> -->
-  <view class="navi" bindtap="navigatorTo">
+  <view class="navi" bindlongtap="navigatorTo" bindtap="getNowLocation">
   	<view class="iconfont icon-weizhi1">{{locals}}</view>
   </view>
   <view class="util">xxx</view>
@@ -12,6 +12,7 @@
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}</p>
   			<p class="weather">{{weather}}</p>
+				<p class="airMass">{{airMass}}</p>
   		</view>
   	</view>
   	<!-- 自适应区域 -->
