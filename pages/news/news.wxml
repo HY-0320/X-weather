@@ -1,5 +1,5 @@
   <!-- <view class="all"> -->
-  <view class="navi" bindtap="navigatorTo">
+  <view class="navi" bindlongtap="navigatorTo" bindtap="dialogStart">
   	<view class="iconfont icon-weizhi1">{{locals}}</view>
   </view>
   <view class="util">xxx</view>
@@ -48,7 +48,4 @@
   		<view class="tips">
   		</view>
   	</view>
-  	<mp-dialog title="X-weather" show="{{dialogShow}}" bindbuttontap="tapDialogButton" buttons="{{[{text: '取消'}, {text: '确认'}]}}">
-  		<view>{{tips}}</view>
-  	</mp-dialog>
   </view>
