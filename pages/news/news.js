@@ -2,14 +2,6 @@
 const app = getApp()
 Page({
   data: {
-    dialogShow: true,
-    tips: "X-weather请求获取您的位置信息",
-    buttons: [{
-      text: '取消'
-    }, {
-      text: '确定'
-    }],
-    sign: "0",
     currentTemperature: "29℃",
     weather: "中雨",
     airMass: "空气优",
@@ -18,62 +10,6 @@ Page({
     percentage: "", //完成进度值 
     diffAngle: "25" //完成进度弧度值
   },
-  tapDialogButton: function (e) {
-    // 引入SDK核心类
-    var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
-    // 实例化API核心类
-    var demo = new QQMapWX({
-      key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填,在腾讯地图申请获得唯一key值
-    });
-    // 地理位置
-    var that = this;
-    if (e.detail.index) {
-      this.dialogShow = false
-      this.setData({
-        dialogShow: false
-      })
-      wx.getLocation({
-        type: 'wgs84',
-        success(res) {
-          // console.log(res)
-          const latitude = res.latitude
-          const longitude = res.longitude
-          const speed = res.speed
-          const accuracy = res.accuracy
-          // 调用接口转换成具体位置
-          demo.reverseGeocoder({
-            location: {
-              latitude: res.latitude,
-              longitude: res.longitude
-            },
-            success: function (res) {
-              // console.log(res.result);
-              // console.log(res.result.address_component.city)
-              that.locals = res.result.address_component.city
-              that.setData({
-                locals: that.locals
-              })
-            },
-            fail: function (res) {
-              console.log(res);
-            },
-          })
-        }
-      })
-    } else {
-      this.tips = "抱歉您将无法获得当前位置的天气信息"
-      this.setData({
-        tips: this.tips
-      })
-      setInterval(function () {
-        that.dialogShow = false
-        that.setData({
-          dialogShow: that.dialogShow
-        })
-      }, 2800)
-    }
-  },
-
   navigatorTo: function () {
     wx.navigateTo({
       url: '../show/show',
@@ -86,6 +22,43 @@ Page({
     // console.log(options)
     var a = app.globalData.longitude
     console.log(a)
+    // 引入SDK核心类
+    var that = this
+    var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
+    // 实例化API核心类
+    var demo = new QQMapWX({
+      key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填,在腾讯地图申请获得唯一key值
+    });
+    // 地理位置
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        // console.log(res)
+        const latitude = res.latitude
+        const longitude = res.longitude
+        const speed = res.speed
+        const accuracy = res.accuracy
+        // 调用接口转换成具体位置
+        demo.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success: function (res) {
+            // console.log(res.result);
+            // console.log(res.result.address_component.city)
+            that.locals = res.result.address_component.city
+            that.setData({
+              locals: that.locals
+            })
+          },
+          fail: function (res) {
+            console.log(res);
+          },
+        })
+      }
+    })
+
   },
 
   /**

@@ -15,9 +15,7 @@ Page({
       type: 'wgs84',
       success(res) {
         console.log(res)
-        console.log(app.globalData.longitude)
         app.globalData.longitude = res.latitude
-        console.log(app.globalData.longitude)
       }
     })
     if (e.detail.userInfo) {
@@ -26,39 +24,42 @@ Page({
       })
     }
     else{
-      this.isHide = true
       this.setData({
         isHide:true
       })
     }
-
-      // wx.getSetting({
-      //   success(res) {
-      //     console.log(res)
-      //     if (res.detail) {
-      //       that.setData({
-      //         isHide: "false"
-      //       })
-          
-
-      //     }
-      //   }
-      // })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+ var that = this
+ let ishide = this.data.isHide
+ console.log(ishide)
     wx.getLocation({
       type: 'wgs84',
       success(res) {
         console.log(res)
-        console.log(app.globalData.longitude)
         app.globalData.longitude = res.latitude
-        console.log(app.globalData.longitude)
       }
     })
+    wx.getSetting({
+      success (res) {
+        console.log(res.authSetting)
+        if(res.authSetting["scope.userInfo"])
+        {console.log(1)}
+        ishide = false
+
+        that.setData({
+          isHide:ishide
+        })  
+        wx.navigateTo({
+          url: '../news/news',
+        })
+      }
+    })
+ 
+   
 
 
   },
