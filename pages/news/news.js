@@ -7,7 +7,8 @@ Page({
     airMass: "空气优",
     locals: "西安",
     startAngle: "5", //开始位置弧度
-    percentage: "", //完成进度值 
+    airMassPercentage: "25", //完成进度值 
+    comfortPercentage: "75",
     diffAngle: "25" //完成进度弧度值
   },
   navigatorTo: function () {
@@ -20,8 +21,7 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options)
-    var a = app.globalData.longitude
-    console.log(a)
+
     // 引入SDK核心类
     var that = this
     var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
@@ -29,7 +29,7 @@ Page({
     var demo = new QQMapWX({
       key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填,在腾讯地图申请获得唯一key值
     });
-    // 地理位置
+   //地理位置
     wx.getLocation({
       type: 'wgs84',
       success(res) {
@@ -73,25 +73,23 @@ Page({
     context.beginPath();
     context.arc(75, 85, 50, 0, 2 * Math.PI, false);
     // new added
-    context.setLineWidth(4);
-    context.setStrokeStyle('white');
+    context.setLineWidth(7);
+    context.setStrokeStyle('rgb(131, 176, 211)');
     context.stroke();
     //二层画布百分比绘制
-    this.startAngle = 1 / 5 * Math.PI;
-    this.diffAngle = this.percentage / 100 * Math.PI * 2;
+    this.data.startAngle = 0;
+    this.data.diffAngle = this.data.airMassPercentage / 100 * Math.PI * 2;
     context.beginPath();
-    context.arc(75, 85, 50, this.startAngle, this.diffAngle + this.startAngle, true);
-    context.setLineWidth(7);
-    context.setStrokeStyle('#ccc');
+    context.arc(75, 85, 50, this.data.startAngle, this.data.diffAngle + this.data.startAngle, true);
+    context.setLineWidth(4);
+    context.setStrokeStyle('white');
     context.stroke();
     //三层百分比圈内文字绘制
     context.setFillStyle('white');
     context.setTextAlign('center');
     context.setFontSize('12px serif');
     context.fillText('污染指数', 73, 80)
-    console.log(2)
-    console.log(this.startAngle)
-    context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
+    context.fillText(this.data.airMassPercentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw();
 
     //空气湿度-舒适度百分比绘制
@@ -100,27 +98,27 @@ Page({
     context.beginPath();
     context.arc(75, 85, 50, 0, 2 * Math.PI, false);
     // new added
-    context.setLineWidth(4);
-    context.setStrokeStyle('white');
+    context.setLineWidth(7);
+    context.setStrokeStyle('rgb(131, 176, 211)');
     context.stroke();
     // var startAngle = 3 / 2 * Math.PI; //开始位置弧度
     // var percentage = 10; //完成进度值 
     // var diffAngle = percentage / 100 * Math.PI * 2; //完成进度弧度值
 
     //二层画布百分比绘制
-    this.startAngle = 1 / 5 * Math.PI;
-    this.diffAngle = this.percentage / 100 * Math.PI * 2;
+    this.data.startAngle = 0;
+    this.data.diffAngle = this.data.comfortPercentage / 100 * Math.PI * 2;
     context.beginPath();
-    context.arc(75, 85, 50, this.startAngle, this.diffAngle + this.startAngle, true);
-    context.setLineWidth(7);
-    context.setStrokeStyle('#ccc');
+    context.arc(75, 85, 50, this.data.startAngle, this.data.diffAngle + this.data.startAngle, true);
+    context.setLineWidth(4);
+    context.setStrokeStyle('white');
     context.stroke();
     //三层百分比圈内文字绘制
     context.setFillStyle('white');
     context.setTextAlign('center');
     context.setFontSize('12px serif');
     context.fillText('体感舒适度', 73, 80)
-    context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
+    context.fillText(this.data.comfortPercentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw()
   },
   /**

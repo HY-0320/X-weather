@@ -32,9 +32,21 @@ App({
         }
       }
     })
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        // console.log(res)
+        this.globalData.latitude = res.latitude
+        this.globalData.latitude = res.longitude
+        // const latitude = res.latitude
+        // const longitude = res.longitude
+        // const speed = res.speed
+        // const accuracy = res.accuracy
+      }
+    })
   },
   globalData: {
-    latitude:"6",
-    longitude:"5"
+    latitude:" ",
+    longitude:" "
   }
 })
