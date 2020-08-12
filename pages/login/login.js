@@ -1,4 +1,5 @@
 // pages/home/home.js
+const app = getApp()
 Page({
 
   /**
@@ -10,6 +11,15 @@ Page({
   },
   bindGetUserInfo: function (e) {
     console.log(e)
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        console.log(app.globalData.longitude)
+        app.globalData.longitude = res.latitude
+        console.log(app.globalData.longitude)
+      }
+    })
     if (e.detail.userInfo) {
       wx.navigateTo({
         url: '../news/news',
@@ -21,13 +31,7 @@ Page({
         isHide:true
       })
     }
-      wx.getLocation({
-        type: 'wgs84',
-        success(res) {
-          console.log(res)
-        }
-      })
-      
+
       // wx.getSetting({
       //   success(res) {
       //     console.log(res)
@@ -46,7 +50,15 @@ Page({
    */
   onLoad: function (options) {
 
-
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res)
+        console.log(app.globalData.longitude)
+        app.globalData.longitude = res.latitude
+        console.log(app.globalData.longitude)
+      }
+    })
 
 
   },

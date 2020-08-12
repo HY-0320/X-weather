@@ -34,5 +34,7 @@ App({
     })
   },
   globalData: {
+    latitude:"6",
+    longitude:"5"
   }
 })

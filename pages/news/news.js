@@ -1,4 +1,5 @@
 // pages/news/news.js
+const app = getApp()
 Page({
   data: {
     dialogShow: true,
@@ -13,9 +14,9 @@ Page({
     weather: "中雨",
     airMass: "空气优",
     locals: "西安",
-    startAngle: "", //开始位置弧度
-    percentage: 10, //完成进度值 
-    diffAngle: "" //完成进度弧度值
+    startAngle: "5", //开始位置弧度
+    percentage: "", //完成进度值 
+    diffAngle: "25" //完成进度弧度值
   },
   tapDialogButton: function (e) {
     // 引入SDK核心类
@@ -83,6 +84,8 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options)
+    var a = app.globalData.longitude
+    console.log(a)
   },
 
   /**
@@ -113,6 +116,8 @@ Page({
     context.setTextAlign('center');
     context.setFontSize('12px serif');
     context.fillText('污染指数', 73, 80)
+    console.log(2)
+    console.log(this.startAngle)
     context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw();
 
