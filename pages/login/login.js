@@ -43,12 +43,16 @@ Page({
         app.globalData.longitude = res.latitude
       }
     })
+    
     wx.getSetting({
       success (res) {
         console.log(res.authSetting)
         if(res.authSetting["scope.userInfo"])
-        {console.log(1)}
-        ishide = false
+        {
+          console.log(1)
+          ishide = false
+        }
+        
 
         that.setData({
           isHide:ishide
@@ -58,6 +62,7 @@ Page({
         })
       }
     })
+    console.log(3)
  
    
 

@@ -7,7 +7,8 @@ Page({
     airMass: "空气优",
     locals: "西安",
     startAngle: "5", //开始位置弧度
-    percentage: "", //完成进度值 
+    percentage: "100", //完成进度值 
+    hy:"10",
     diffAngle: "25" //完成进度弧度值
   },
   navigatorTo: function () {
@@ -66,7 +67,8 @@ Page({
    */
   onReady: function () {
     //判断当前天气状况，以此来显示不同状态下的天气图标
-
+    var that = this 
+    
     //空气质量-污染指数百分比绘制
     var context = wx.createCanvasContext('firstCanvas')
     //一层圆圈绘制
@@ -77,8 +79,11 @@ Page({
     context.setStrokeStyle('white');
     context.stroke();
     //二层画布百分比绘制
+    console.log(this.startAngle)
     this.startAngle = 1 / 5 * Math.PI;
-    this.diffAngle = this.percentage / 100 * Math.PI * 2;
+    console.log(this.data.percentage)
+    this.diffAngle = this.data.percentage / 100 * Math.PI * 2;
+    console.log(this.diffAngle)
     context.beginPath();
     context.arc(75, 85, 50, this.startAngle, this.diffAngle + this.startAngle, true);
     context.setLineWidth(7);
@@ -89,8 +94,6 @@ Page({
     context.setTextAlign('center');
     context.setFontSize('12px serif');
     context.fillText('污染指数', 73, 80)
-    console.log(2)
-    console.log(this.startAngle)
     context.fillText(this.percentage + '%', 75, 100); //显示有问题 this.percentage undefined
     context.draw();
 

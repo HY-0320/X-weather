@@ -27,13 +27,13 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wxb36089762defdc39",
-	"projectname": "XN",
+	"appid": "wx4f23e2f2fddb1dd8",
+	"projectname": "X-weather",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

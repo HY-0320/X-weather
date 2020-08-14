@@ -1,8 +1,7 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/news/news",
-    "pages/show/show"
+    "pages/news/news"
   ],
   "permission": {
     "scope.userLocation": {
