@@ -3,7 +3,6 @@
 @import './assets/ICONFIG/serach.wxss';
 @import './assets/ICONFIG/local.wxss';
 @import './assets/ICONFIG/return.wxss';
-
 .container {
   height: 100%;
   display: flex;

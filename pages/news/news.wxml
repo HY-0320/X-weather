@@ -1,5 +1,5 @@
   <!-- <view class="all"> -->
-  <view class="navi" bindtap="navigatorTo" >
+  <view class="navi" bindtap="navigatorTo">
   	<view class="iconfont icon-weizhi1">{{locals}}</view>
   </view>
   <view class="util">xxx</view>
@@ -7,7 +7,7 @@
   	<!-- 固定区域 -->
   	<view class="mainTitle">
   		<view class="mainTitleStyle">
-  			<image class="weatherIcon" src="../../image/yu.png"></image>
+  			<image class="weatherIcon" src="../../image/newyintian.jpg"></image>
   		</view>
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}</p>
@@ -17,7 +17,37 @@
   	</view>
   	<!-- 自适应区域 -->
   	<view class="daysWeather">
-  		<view class="yesterday">
+  		<scroll-view class="box" scroll-x="true">
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{one}}.{{weatherOne}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{two}}.{{weatherTwo}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{three}}.{{weatherThree}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{four}}.{{weatherFour}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{five}}.{{weatherFive}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{six}}.{{weatherSix}}</text>
+  			</view>
+  			<view class="box-item">
+  				<text>24℃/29℃</text>
+  				<text>{{seven}}.{{weatherSeven}}</text>
+  			</view>
+  		</scroll-view>
+  		<!-- <view class="yesterday">
   			<text>24℃/29℃</text>
   			<text>昨天.中雨</text>
   		</view>
@@ -28,7 +58,7 @@
   		<view class="tommorow">
   			<text>24℃/29℃</text>
   			<text>明天.中雨</text>
-  		</view>
+  		</view> -->
   	</view>
   	<view class="Percentage ">
   		<view class="airMassPercentage">

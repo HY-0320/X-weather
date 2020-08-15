@@ -43,17 +43,21 @@ page {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* background-image: src("../../image/newyintian.jpg"); */
 }
 
 .mainTitleStyle {
   width: 400rpx;
   height: 400rpx;
-  background-color: rgb(157, 205, 236);
+  background-color: white;
+  border-radius: 20px;
 }
 
 .mainTitleStyle image {
   width: 400rpx;
   height: 400rpx;
+  margin-top: 40rpx;
+  border-radius: 20px;
 }
 
 .currentWeatherInformation {
@@ -97,13 +101,36 @@ page {
 }
 
 .daysWeather view {
-  width: 200rpx;
+  width: 280rpx;
   height: 100rpx;
   /* margin-top: 10px; */
   border: 1px solid aliceblue;
   background-color: white;
   border-radius: 15px;
 }
+.box {
+  width: 100vw;
+  height: 100rpx;
+  /*white-space 不能丢 */
+  white-space: nowrap;
+  /* border: 1px solid red;
+  box-sizing: border-box */
+}
+
+.box-item {
+  width: 32%;
+  height: 100%;
+  /* border: 2rpx solid green; */
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+}
+.box-item text{
+  display: block;
+  font-size: 28rpx;
+  padding-top:2.5rpx;
+  color: rgb(180, 175, 175);
+}v
 
 .daysWeather text {
   display: block;
