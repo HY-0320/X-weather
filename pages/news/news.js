@@ -52,7 +52,7 @@ Page({
     success: function (res) {
       console.log(res.result);
       // console.log(res.result.address_component.city)
-      that.locals = res.result.address_component.city
+      that.locals = res.result.address
       that.setData({
         locals: that.locals
       })

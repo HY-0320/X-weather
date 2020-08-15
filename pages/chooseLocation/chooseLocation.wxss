@@ -17,3 +17,20 @@
   width: 100%;
   height: 70px;
 }
+.root{
+  width: 100%;
+  height: 1200rpx;
+  background-color:rgb(153, 182, 211);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.buttonStyle{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 50rpx;
+  color: #ccc;
+  background-color: white;
+}

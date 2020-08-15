@@ -1,13 +1,13 @@
   <!-- <view class="all"> -->
   <view class="navi" bindtap="navigatorTo">
-  	<view class="iconfont icon-weizhi1">{{locals}}</view>
+  	<view class="iconfont icon-weizhi1 xxx">{{locals}}</view>
   </view>
   <view class="util">xxx</view>
   <view class="root">
   	<!-- 固定区域 -->
   	<view class="mainTitle">
   		<view class="mainTitleStyle">
-  			<image class="weatherIcon" src="../../image/newyintian.jpg"></image>
+  			<image class="weatherIcon" src="../../image/leiyu.png"></image>
   		</view>
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}</p>
@@ -16,50 +16,45 @@
   		</view>
   	</view>
   	<!-- 自适应区域 -->
-  	<view class="daysWeather">
-  		<scroll-view class="box" scroll-x="true">
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{one}}.{{weatherOne}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{two}}.{{weatherTwo}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{three}}.{{weatherThree}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{four}}.{{weatherFour}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{five}}.{{weatherFive}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{six}}.{{weatherSix}}</text>
-  			</view>
-  			<view class="box-item">
-  				<text>24℃/29℃</text>
-  				<text>{{seven}}.{{weatherSeven}}</text>
-  			</view>
-  		</scroll-view>
-  		<!-- <view class="yesterday">
+  	<!-- <view class="daysWeather"> -->
+  	<scroll-view class="box" scroll-x="true">
+  		<view class="box-item">
+  			<text>{{one}}</text>
   			<text>24℃/29℃</text>
-  			<text>昨天.中雨</text>
+  			<text>{{weatherOne}}</text>
   		</view>
-  		<view class="today">
+  		<view class="box-item">
+  			<text>{{two}}</text>
   			<text>24℃/29℃</text>
-  			<text>今天.中雨</text>
+  			<text>{{weatherTwo}}</text>
   		</view>
-  		<view class="tommorow">
+  		<view class="box-item">
+  			<text>{{three}}.</text>
   			<text>24℃/29℃</text>
-  			<text>明天.中雨</text>
-  		</view> -->
-  	</view>
+  			<text>{{weatherThree}}</text>
+  		</view>
+  		<view class="box-item">
+  			<text>{{four}}</text>
+  			<text>24℃/29℃</text>
+  			<text>{{weatherFour}}</text>
+  		</view>
+  		<view class="box-item">
+  			<text>{{five}}</text>
+  			<text>24℃/29℃</text>
+  			<text>{{weatherFive}}</text>
+  		</view>
+  		<view class="box-item">
+  			<text>{{six}}</text>
+  			<text>24℃/29℃</text>
+  			<text>{{weatherSix}}</text>
+  		</view>
+  		<view class="box-item">
+  			<text>{{seven}}</text>
+  			<text>24℃/29℃</text>
+  			<text>{{weatherSeven}}</text>
+  		</view>
+  	</scroll-view>
+  	<!-- </view> -->
   	<view class="Percentage ">
   		<view class="airMassPercentage">
   			<canvas style="width:300rpx; height:300rpx; background-color:rgb(173, 200, 221); border-radius: 10px" canvas-id="firstCanvas" class="airPercentageTitleOne">

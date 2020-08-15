@@ -1,8 +1,10 @@
 <!--pages/chooseLocation/chooseLocation.wxml-->
 <!-- <view class="padding"></view> -->
-  <view class="navi" bindtap="backToHome" >
-  	<view class="iconfont icon-fanhui">返回</view>
-  </view>
-  <view class="util">xxx</view>
-<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="15"  markers="{{markers}}"  bindregionchange="regionchange" show-location  style="width:{{map_width}}px;height:{{map_height}}px"></map>
-<button bindtap="change">gaibian</button>
+<view class="navi" bindtap="backToHome">
+	<view class="iconfont icon-fanhui">返回</view>
+</view>
+<view class="util">xxx</view>
+<view class="root">
+	<map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="15" markers="{{markers}}" bindregionchange="regionchange" show-location style="width:{{map_width}}px;height:{{map_height}}px"></map>
+	<button bindtap="change" class="buttonStyle">其他地点</button>
+</view>
