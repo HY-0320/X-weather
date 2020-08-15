@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/login/login",
-    "pages/news/news"
+    "pages/news/news",
+    "pages/chooseLocation/chooseLocation"
   ],
   "permission": {
     "scope.userLocation": {
@@ -20,6 +21,11 @@
   "sitemapLocation": "sitemap.json",
   "useExtendedLib": {
     "weui": true
-  }
-
+  },
+  "plugins": {
+    "chooseLocation": {
+    "version": "1.0.4",
+    "provider": "wx76a9a06e5b4e693e"
+    }
+}
 }

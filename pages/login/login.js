@@ -15,7 +15,8 @@ Page({
       type: 'wgs84',
       success(res) {
         console.log(res)
-        app.globalData.longitude = res.latitude
+        app.globalData.longitude = res.longitude
+        app.globalData.latitude = res.latitude
       }
     })
     if (e.detail.userInfo) {
@@ -35,20 +36,23 @@ Page({
   onLoad: function (options) {
  var that = this
  let ishide = this.data.isHide
- console.log(ishide)
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',
       success(res) {
         console.log(res)
-        app.globalData.longitude = res.latitude
+        app.globalData.longitude = res.longitude
+        app.globalData.latitude=res.latitude
       }
     })
+    
     wx.getSetting({
       success (res) {
         console.log(res.authSetting)
         if(res.authSetting["scope.userInfo"])
-        {console.log(1)}
-        ishide = false
+        {
+          ishide = false
+        }
+        
 
         that.setData({
           isHide:ishide

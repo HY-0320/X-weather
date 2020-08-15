@@ -1,0 +1,19 @@
+/* pages/chooseLocation/chooseLocation.wxss */
+.padding{
+  width: 100%;
+  height: 20rpx;
+}
+.navi {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: rgb(252, 251, 254);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-left: 25rpx;
+}
+.util {
+  width: 100%;
+  height: 70px;
+}

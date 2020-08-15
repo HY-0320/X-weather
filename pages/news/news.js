@@ -20,6 +20,7 @@ Page({
     weatherSix:"阴天",
     seven:"8.20",
     weatherSeven:"小雨",
+    locals: "",
     startAngle: "5", //开始位置弧度
     airMassPercentage: "25", //完成进度值 
     comfortPercentage: "75",
@@ -27,7 +28,7 @@ Page({
   },
   navigatorTo: function () {
     wx.navigateTo({
-      url: '../show/show',
+      url: '../chooseLocation/chooseLocation',
     })
   },
   /**
@@ -43,35 +44,55 @@ Page({
     var demo = new QQMapWX({
       key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填,在腾讯地图申请获得唯一key值
     });
+    var xx= app.globalData.latitude
+    console.log(xx)
    //地理位置
-    wx.getLocation({
-      type: 'wgs84',
-      success(res) {
-        // console.log(res)
-        const latitude = res.latitude
-        const longitude = res.longitude
-        const speed = res.speed
-        const accuracy = res.accuracy
-        // 调用接口转换成具体位置
-        demo.reverseGeocoder({
-          location: {
-            latitude: res.latitude,
-            longitude: res.longitude
-          },
-          success: function (res) {
-            // console.log(res.result);
-            // console.log(res.result.address_component.city)
-            that.locals = res.result.address_component.city
-            that.setData({
-              locals: that.locals
-            })
-          },
-          fail: function (res) {
-            console.log(res);
-          },
-        })
-      }
-    })
+   console.log(app.globalData.latitude)
+   demo.reverseGeocoder({
+    location: {
+      latitude: app.globalData.latitude,
+      longitude: app.globalData.longitude
+    },
+    success: function (res) {
+      // console.log(res.result);
+      // console.log(res.result.address_component.city)
+      that.locals = res.result.address_component.city
+      that.setData({
+        locals: that.locals
+      })
+    },
+    fail: function (res) {
+      console.log(res);
+    },
+  })
+    // wx.getLocation({
+    //   type: 'wgs84',
+    //   success(res) {
+    //     // console.log(res)
+    //     const latitude = res.latitude
+    //     const longitude = res.longitude
+    //     const speed = res.speed
+    //     const accuracy = res.accuracy
+    //     // 调用接口转换成具体位置
+    //     demo.reverseGeocoder({
+    //       location: {
+    //         latitude: res.latitude,
+    //         longitude: res.longitude
+    //       },
+    //       success: function (res) {
+    //         // console.log(res.result);
+    //         // console.log(res.result.address_component.city)
+    //         that.locals = res.result.address_component.city
+    //         that.setData({
+    //           locals: that.locals
+    //         })
+    //       },
+    //       fail: function (res) {
+    //         console.log(res);
+    //       },
+    //     })
+    //   }
+    // })
 
   },
 
@@ -80,7 +101,8 @@ Page({
    */
   onReady: function () {
     //判断当前天气状况，以此来显示不同状态下的天气图标
-
+    var that = this 
+    
     //空气质量-污染指数百分比绘制
     var context = wx.createCanvasContext('firstCanvas')
     //一层圆圈绘制
