@@ -51,15 +51,22 @@ Page({
         if(res.authSetting["scope.userInfo"])
         {
           ishide = false
+          that.setData({
+            isHide:ishide
+          })  
+          wx.navigateTo({
+            url: '../news/news',
+          })
+        }
+        else{
+          ishide = true
+          that.setData({
+            isHide:ishide
+          }) 
         }
         
 
-        that.setData({
-          isHide:ishide
-        })  
-        wx.navigateTo({
-          url: '../news/news',
-        })
+       
       }
     })
  

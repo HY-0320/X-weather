@@ -5,7 +5,6 @@ Page({
     currentTemperature: "29℃",
     weather: "中雨",
     airMass: "空气优",
-    locals: "西安",
     one:"8.14",
     weatherOne:"中雨",
     two:"8.15",
@@ -44,17 +43,14 @@ Page({
     var demo = new QQMapWX({
       key: 'BWMBZ-M7GWO-2WKWZ-SIG6C-AOCY3-HJBNZ' // 必填,在腾讯地图申请获得唯一key值
     });
-    var xx= app.globalData.latitude
-    console.log(xx)
    //地理位置
-   console.log(app.globalData.latitude)
    demo.reverseGeocoder({
     location: {
       latitude: app.globalData.latitude,
       longitude: app.globalData.longitude
     },
     success: function (res) {
-      // console.log(res.result);
+      console.log(res.result);
       // console.log(res.result.address_component.city)
       that.locals = res.result.address_component.city
       that.setData({

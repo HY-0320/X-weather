@@ -33,11 +33,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wx4f23e2f2fddb1dd8",
-<<<<<<< HEAD
-	"projectname": "XN",
-=======
 	"projectname": "X-weather",
->>>>>>> d9c4b3196abafa83c2a757e15e835309d14c8a5a
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
