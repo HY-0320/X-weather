@@ -21,14 +21,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   regionchange:function(e){
-    console.log(e)
-    console.log("地图位置改变了" + JSON.stringify(e));
-    if (e.causedBy == "scale" || e.causedBy == "drag") {
-      // 获取地图位置改变后的中心点经纬度以及获取中心点附近的位置信息
-      this.getCenterLocationFunc();
-    }else{
-      console.log("其余事件不执行逻辑");
-    }
+
+    let that = this;
+    that.mpCtx = wx.createMapContext("map");
+    that.mpCtx.getCenterLocation({
+      success:(res)=>{
+        app.globalData.latitude=res.latitude
+        app.globalData.longitude=res.longitude
+        that.setData({
+          markers:[{
+            id: 0,
+            iconPath: "../../image/定位点.png",
+            longitude:res.longitude ,
+            latitude: res.latitude,
+            width: 32,
+            height: 32
+          }]
+        })
+      }
+      })
   },
  change:function(){
    var that =this

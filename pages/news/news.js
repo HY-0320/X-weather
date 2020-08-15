@@ -19,7 +19,7 @@ Page({
     weatherSix:"阴天",
     seven:"8.20",
     weatherSeven:"小雨",
-    locals: "",
+    locals: "点击获取地址",
     startAngle: "5", //开始位置弧度
     airMassPercentage: "25", //完成进度值 
     comfortPercentage: "25",
@@ -50,9 +50,9 @@ Page({
       longitude: app.globalData.longitude
     },
     success: function (res) {
-      console.log(res.result);
+      // console.log(res.result);
       // console.log(res.result.address_component.city)
-      that.locals = res.result.address
+      that.locals = res.result.address_component.city + res.result.address_component.district+res.result.address_component.street
       that.setData({
         locals: that.locals
       })
@@ -60,35 +60,7 @@ Page({
     fail: function (res) {
       console.log(res);
     },
-  })
-    // wx.getLocation({
-    //   type: 'wgs84',
-    //   success(res) {
-    //     // console.log(res)
-    //     const latitude = res.latitude
-    //     const longitude = res.longitude
-    //     const speed = res.speed
-    //     const accuracy = res.accuracy
-    //     // 调用接口转换成具体位置
-    //     demo.reverseGeocoder({
-    //       location: {
-    //         latitude: res.latitude,
-    //         longitude: res.longitude
-    //       },
-    //       success: function (res) {
-    //         // console.log(res.result);
-    //         // console.log(res.result.address_component.city)
-    //         that.locals = res.result.address_component.city
-    //         that.setData({
-    //           locals: that.locals
-    //         })
-    //       },
-    //       fail: function (res) {
-    //         console.log(res);
-    //       },
-    //     })
-    //   }
-    // })
+  }) 
 
   },
 

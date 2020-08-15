@@ -12,7 +12,7 @@ Page({
   bindGetUserInfo: function (e) {
     console.log(e)
     wx.getLocation({
-      type: 'wgs84',
+      type: 'gcj02',
       success(res) {
         console.log(res)
         app.globalData.longitude = res.longitude
