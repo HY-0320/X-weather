@@ -22,7 +22,7 @@ Page({
     locals: "",
     startAngle: "5", //开始位置弧度
     airMassPercentage: "25", //完成进度值 
-    comfortPercentage: "75",
+    comfortPercentage: "25",
     diffAngle: "25" //完成进度弧度值
   },
   navigatorTo: function () {
@@ -117,11 +117,11 @@ Page({
     context.setStrokeStyle('white');
     context.stroke();
     //三层百分比圈内文字绘制
-    context.setFillStyle('white');
+    context.setFillStyle('rgb(252, 252, 252)');
     context.setTextAlign('center');
-    context.setFontSize('12px serif');
-    context.fillText('污染指数', 73, 80)
-    context.fillText(this.data.airMassPercentage + '%', 75, 100); //显示有问题 this.percentage undefined
+    context.setFontSize('14px serif');
+    context.fillText('污染指数', 75, 80)
+    context.fillText(this.data.airMassPercentage + '%', 77, 100); //显示有问题 this.percentage undefined
     context.draw();
 
     //空气湿度-舒适度百分比绘制
@@ -146,11 +146,11 @@ Page({
     context.setStrokeStyle('white');
     context.stroke();
     //三层百分比圈内文字绘制
-    context.setFillStyle('white');
+    context.setFillStyle('rgb(252, 252, 252)');
     context.setTextAlign('center');
-    context.setFontSize('12px serif');
-    context.fillText('体感舒适度', 73, 80)
-    context.fillText(this.data.comfortPercentage + '%', 75, 100); //显示有问题 this.percentage undefined
+    context.setFontSize('14px serif');
+    context.fillText('体感舒适度', 75, 80)
+    context.fillText(this.data.comfortPercentage + '%', 77, 100); //显示有问题 this.percentage undefined
     context.draw()
   },
   /**
