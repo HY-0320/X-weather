@@ -23,7 +23,58 @@ Page({
     startAngle: "5", //开始位置弧度
     airMassPercentage: "25", //完成进度值 
     comfortPercentage: "25",
-    diffAngle: "25" //完成进度弧度值
+    diffAngle: "25", //完成进度弧度值,
+    sevenWeather:[
+      {
+        id:"1",
+        fxDate:"8.16",
+        temMax:"27",
+        temMin:"24",
+        textDay:"暴雨"
+      },
+      {
+        id:"2",
+        fxDate:"8.17",
+        temMax:"27",
+        temMin:"24",
+        textDay:"暴雨"
+      },
+      {
+        id:"3",
+        fxDate:"8.17",
+        temMax:"30",
+        temMin:"21",
+        textDay:"晴天"
+      },
+      {
+        id:"4",
+        fxDate:"8.18",
+        temMax:"23",
+        temMin:"19",
+        textDay:"暴雨"
+      },
+      {
+        id:"5",
+        fxDate:"8.19",
+        temMax:"30",
+        temMin:"24",
+        textDay:"多云"
+      },
+      {
+        id:"6",
+        fxDate:"8.20",
+        temMax:"27",
+        temMin:"24",
+        textDay:"暴雨"
+      },
+      {
+        id:"7",
+        fxDate:"8.21",
+        temMax:"27",
+        temMin:"24",
+        textDay:"暴雨"
+      }
+    ]
   },
   navigatorTo: function () {
     wx.navigateTo({
@@ -35,7 +86,6 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options)
-
     // 引入SDK核心类
     var that = this
     var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');

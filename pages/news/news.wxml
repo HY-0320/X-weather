@@ -18,40 +18,13 @@
   	<!-- 自适应区域 -->
   	<!-- <view class="daysWeather"> -->
   	<scroll-view class="box" scroll-x="true">
-  		<view class="box-item">
-  			<text>{{one}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherOne}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{two}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherTwo}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{three}}.</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherThree}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{four}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherFour}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{five}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherFive}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{six}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherSix}}</text>
-  		</view>
-  		<view class="box-item">
-  			<text>{{seven}}</text>
-  			<text>24℃/29℃</text>
-  			<text>{{weatherSeven}}</text>
+  		<view wx:for="{{sevenWeather}}"
+			wx:for-item="items"
+			wx:key="id"
+			class="box-item">
+  			<text>{{items.fxDate}}</text>
+  			<text>{{items.temMin}}℃/{{items.temMax}}℃</text>
+  			<text>{{items.textDay}}</text>
   		</view>
   	</scroll-view>
   	<!-- </view> -->

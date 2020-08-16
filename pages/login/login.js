@@ -47,7 +47,7 @@ Page({
     
     wx.getSetting({
       success (res) {
-        console.log(res.authSetting)
+        console.log(res)
         if(res.authSetting["scope.userInfo"])
         {
           ishide = false
