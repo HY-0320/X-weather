@@ -78,7 +78,7 @@ Page({
     context.arc(75, 85, 50, 0, 2 * Math.PI, false);
     // new added
     context.setLineWidth(7);
-    context.setStrokeStyle('rgb(131, 176, 211)');
+    context.setStrokeStyle('rgb(74, 150, 226)');
     context.stroke();
     //二层画布百分比绘制
     this.data.startAngle = 0;
@@ -103,7 +103,7 @@ Page({
     context.arc(75, 85, 50, 0, 2 * Math.PI, false);
     // new added
     context.setLineWidth(7);
-    context.setStrokeStyle('rgb(131, 176, 211)');
+    context.setStrokeStyle('rgb(74, 150, 226)');
     context.stroke();
     // var startAngle = 3 / 2 * Math.PI; //开始位置弧度
     // var percentage = 10; //完成进度值 

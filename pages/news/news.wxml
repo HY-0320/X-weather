@@ -57,12 +57,12 @@
   	<!-- </view> -->
   	<view class="Percentage ">
   		<view class="airMassPercentage">
-  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(173, 200, 221); border-radius: 10px" canvas-id="firstCanvas" class="airPercentageTitleOne">
+  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(135, 191, 233); border-radius: 10px" canvas-id="firstCanvas" class="airPercentageTitleOne">
   				空气质量
   			</canvas>
   		</view>
   		<view class="comfortPercentage">
-  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(173, 200, 221); border-radius: 10px" canvas-id="secondCanvas" class="airPercentageTitleOne">
+  			<canvas style="width:300rpx; height:300rpx; background-color:rgb(135, 191, 233); border-radius: 10px" canvas-id="secondCanvas" class="airPercentageTitleOne">
   				空气湿度
   			</canvas>
   			<canvas>
