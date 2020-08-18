@@ -108,11 +108,15 @@ page {
   background-color: white;
   border-radius: 15px;
 } */
+.weatherImage{
+  width: 25px;
+  height: 25px;
+}
 .box {
   margin-top: 20rpx;
   margin-bottom: 20rpx;
   width: 80vm;
-  height: 160rpx;
+  height: 230rpx;
   display: flex;
   justify-content: space-around;
   /*white-space 不能丢 */

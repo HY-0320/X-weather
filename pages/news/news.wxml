@@ -25,6 +25,7 @@
   			<text>{{items.fxDate}}</text>
   			<text>{{items.temMin}}℃/{{items.temMax}}℃</text>
   			<text>{{items.textDay}}</text>
+				<image class="weatherImage" src="{{items.useimage}}"></image>
   		</view>
   	</scroll-view>
   	<!-- </view> -->

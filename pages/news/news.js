@@ -21,7 +21,7 @@ Page({
     weatherSeven:"小雨",
     locals: "点击获取地址",
     startAngle: "5", //开始位置弧度
-    airMassPercentage: "25", //完成进度值 
+    airMassPercentage: "75", 
     comfortPercentage: "25",
     diffAngle: "25", //完成进度弧度值,
     sevenWeather:[
@@ -30,49 +30,56 @@ Page({
         fxDate:"8.16",
         temMax:"27",
         temMin:"24",
-        textDay:"暴雨"
+        textDay:"暴雨",
+        useimage:"../../image/xuexuexuetian.png"
       },
       {
         id:"2",
         fxDate:"8.17",
         temMax:"27",
         temMin:"24",
-        textDay:"暴雨"
+        textDay:"暴雨",
+        useimage:"../../image/xuexuexuetian.png"
       },
       {
         id:"3",
         fxDate:"8.17",
         temMax:"30",
         temMin:"21",
-        textDay:"晴天"
+        textDay:"晴天",
+        useimage:"../../image/taiyangdouma.png"
       },
       {
         id:"4",
         fxDate:"8.18",
         temMax:"23",
         temMin:"19",
-        textDay:"暴雨"
+        textDay:"暴雨",
+        useimage:"../../image/xuexuexuetian.png"
       },
       {
         id:"5",
         fxDate:"8.19",
         temMax:"30",
         temMin:"24",
-        textDay:"多云"
+        textDay:"多云",
+        useimage:"../../image/yinyinyintian.png"
       },
       {
         id:"6",
         fxDate:"8.20",
         temMax:"27",
         temMin:"24",
-        textDay:"暴雨"
+        textDay:"暴雨",
+        useimage:"../../image/xuexuexuetian.png"
       },
       {
         id:"7",
         fxDate:"8.21",
         temMax:"27",
         temMin:"24",
-        textDay:"暴雨"
+        textDay:"暴雨",
+        useimage:"../../image/xuexuexuetian.png"
       }
     ]
   },
@@ -85,6 +92,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(this.sevenWeather.textDay)
     // console.log(options)
     // 引入SDK核心类
     var that = this

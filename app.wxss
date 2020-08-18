@@ -3,6 +3,7 @@
 @import './assets/ICONFIG/serach.wxss';
 @import './assets/ICONFIG/local.wxss';
 @import './assets/ICONFIG/return.wxss';
+@import './assets/ICONFIG/weatherIcon.wxss';
 .container {
   height: 100%;
   display: flex;
