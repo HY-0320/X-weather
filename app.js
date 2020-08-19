@@ -15,6 +15,7 @@ App({
   },
   globalData: {
     latitude:" ",
-    longitude:" "
+    longitude:" ",
+    ciId:""
   }
 })

@@ -10,30 +10,43 @@
   			<image class="weatherIcon" src="../../image/leiyu.png"></image>
   		</view>
   		<view class="currentWeatherInformation">
-  			<p class="temp">{{currentTemperature}}</p>
+  			<p class="temp">{{currentTemperature}}℃</p>
   			<p class="weather">{{weather}}</p>
   			<p class="airMass">{{airMass}}</p>
   		</view>
   	</view>
   	<!-- 自适应区域 -->
   	<!-- <view class="daysWeather"> -->
-  	<scroll-view class="box" scroll-x="true">
-  		<view wx:for="{{sevenWeather}}"
-			wx:for-item="items"
-			wx:key="id"
-			class="box-item">
-  			<text>{{items.fxDate}}</text>
-  			<text>{{items.temMin}}℃/{{items.temMax}}℃</text>
-  			<text>{{items.textDay}}</text>
-				<image class="weatherImage" src="{{items.useimage}}"></image>
-  		</view>
-  	</scroll-view>
-  	<!-- </view> -->
+  	<!-- 24小时 -->
+  	<view class="margin">
+  		<scroll-view class="box_twentyFour" scroll-x="true">
+  			<view wx:for="{{twenty_four}}" wx:for-item="items" wx:key="id" class="box-item">
+  				<text>{{items.time}}</text>
+  				<image class="weatherImage" src="{{items.useimage}}"></image>
+  				<text>{{items.text}}</text>
+  				<text>{{items.temp}}℃</text>
+  			</view>
+  		</scroll-view>
+  	</view>
+  	<!-- 7天 -->
+  	<view class="margin">
+  		<scroll-view class="box" scroll-x="true">
+  			<view wx:for="{{sevenWeather}}" wx:for-item="items" wx:key="id" class="box-item">
+  				<text>{{items.date}}</text>
+  				<text>{{items.textDay}}</text>
+  				<image class="weatherImage" src="{{items.useimage}}"></image>
+  				<text>{{items.tempMax}}℃</text>
+  				<text class="boxBottom">{{items.tempMin}}℃</text>
+  			</view>
+  		</scroll-view>
+  	</view>
   	<view class="Percentage ">
   		<view class="airMassPercentage">
   			<canvas style="width:300rpx; height:300rpx; background-color:rgb(135, 191, 233); border-radius: 10px" canvas-id="firstCanvas" class="airPercentageTitleOne">
   				空气质量
   			</canvas>
+  			<!-- <view class="airPercentage">污染指数</view>
+  			<view class="airPercentage">{{airMassPercentage}}%</view> -->
   		</view>
   		<view class="comfortPercentage">
   			<canvas style="width:300rpx; height:300rpx; background-color:rgb(135, 191, 233); border-radius: 10px" canvas-id="secondCanvas" class="airPercentageTitleOne">
@@ -45,6 +58,11 @@
   	</view>
   	<view class="tipsBox">
   		<view class="tips">
+  			<button class="myButton" bindtap="getSomeTips">点击获得温馨提示</button>
   		</view>
   	</view>
   </view>
+	<!-- 点击页面最底端按钮获取弹窗天气信息 -->
+  <mp-dialog title="test1" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+  	<view>{{someTips}}</view>
+  </mp-dialog>
