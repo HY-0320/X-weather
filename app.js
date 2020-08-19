@@ -12,6 +12,7 @@ App({
     //     this.globalData.latitude=res.latitude
     //   }
     // })
+   
   },
   globalData: {
     latitude:" ",

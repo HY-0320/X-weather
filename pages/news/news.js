@@ -92,7 +92,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(this.sevenWeather.textDay)
     // console.log(options)
     // 引入SDK核心类
     var that = this
