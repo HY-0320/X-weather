@@ -65,7 +65,7 @@ page {
   height: 150rpx;
   /* background-color: violet; */
   border-radius: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 50px;
   margin-left: 10px;
 }
 
@@ -112,6 +112,16 @@ page {
   width: 25px;
   height: 25px;
 }
+.progress{
+  transform: rotate(270deg);
+  position: relative;
+  top: 100px;
+  
+}
+.wc{
+  position: relative;
+  top:30px;
+}
 .margin{
   width: 700rpx;
   /* height: 400rpx; */
@@ -154,14 +164,17 @@ page {
   display: inline-block;
   text-align: center;
 }
+.pding3{
+  padding-top: 3rpx;
+}
 .box-item text{
   display: block;
   font-size: 28rpx;
-  padding-top:2.5rpx;
+  /* padding-top:2.5rpx; */
   color: rgb(180, 175, 175);
 }
 .boxBottom{
-  padding-top: 450rpx;
+  padding-top: 315rpx;
 }
 
 .daysWeather text {
@@ -215,7 +228,4 @@ page {
   background-color: white;
   border-radius: 10px;
   /* margin-top: 20rpx; */
-}
-.myButton{
-
 }

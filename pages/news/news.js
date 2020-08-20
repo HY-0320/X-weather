@@ -3,121 +3,18 @@ const app = getApp()
 Page({
   data: {
     ccc: "",
-    currentTemperature: "29",
-    weather: "中雨",
-    airMass: "空气优",
-    one: "8.14",
-    weatherOne: "中雨",
-    two: "8.15",
-    weatherTwo: "晴天",
-    three: "8.16",
-    weatherThree: "小雨",
-    four: "8.17",
-    weatherFour: "阴天",
-    five: "8.18",
-    weatherFive: "晴天",
-    six: "8.19",
-    weatherSix: "阴天",
-    seven: "8.20",
-    weatherSeven: "小雨",
+    percent:"",
+    weatherIcon:"../../image/tb/0.png",
+    currentTemperature: "正在获取..",
+    weather: "",
+    airMass: "",
     locals: "点击获取地址",
     startAngle: "5", //开始位置弧度
     airMassPercentage: "75",
     comfortPercentage: "25",
     diffAngle: "25", //完成进度弧度值,
-    twenty_four: [{
-        id: "1",
-        fxTime: "8:00",
-        useimage: "../../image/xuexuexuetian.png",
-        text: "暴雨",
-        temp: "27"
-      },
-      {
-        id: "2",
-        fxTime: "9:00",
-        useimage: "../../image/xuexuexuetian.png",
-        text: "暴雨",
-        temp: "27"
-      },
-      {
-        id: "3",
-        fxTime: "10:00",
-        useimage: "../../image/xuexuexuetian.png",
-        text: "暴雨",
-        temp: "27"
-      },
-      {
-        id: "4",
-        fxTime: "11:00",
-        useimage: "../../image/xuexuexuetian.png",
-        text: "暴雨",
-        temp: "27"
-      },
-      {
-        id: "5",
-        fxTime: "12:00",
-        useimage: "../../image/xuexuexuetian.png",
-        text: "暴雨",
-        temp: "27"
-      }
-    ],
-    sevenWeather: [{
-        id: "1",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "2",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "3",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "4",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "5",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "6",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      },
-      {
-        id: "7",
-        date: "8.16",
-        tempMax: "27",
-        tempMin: "24",
-        textDay: "暴雨",
-        useimage: "../../image/xuexuexuetian.png"
-      }
-    ],
+    twenty_four: [],
+    sevenWeather: [],
     arrayNum:[
       '0','1','2','3','4','5','6'
     ],
@@ -148,11 +45,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.getSevenInformation()
-    console.log(this.data.sevenWeather[3].textDay)
-    // console.log(tt)
-    // console.log(options)
-
     // 引入SDK核心类
     var that = this
     var QQMapWX = require('../../qqmap-wx-jssdk1.2/qqmap-wx-jssdk');
@@ -167,7 +59,7 @@ Page({
         longitude: app.globalData.longitude
       },
       success: function (res) {
-        // console.log(res.result);
+        console.log(res.result);
         // console.log(res.result.address_component.city)
         that.locals = res.result.address_component.city + res.result.address_component.district + res.result.address_component.street
         that.setData({
@@ -181,14 +73,14 @@ Page({
     //后端返回数据获取城市id
     var that = this
     wx.request({
-      url: 'http://99c56y.natappfree.cc/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
+      url: 'http://k74s98.natappfree.cc/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
       method: "GET",
       success: function (res) {
         console.log(res.data)
-        that.data.ccc = res.data.data[0].c_id
-        app.globalData.ciId = res.data.data[0].c_id
+        that.data.ccc = res.data.data[0].cId
+        app.globalData.ciId = res.data.data[0].cId
         that.setData({
-          ccc: res.data.data[0].c_id
+          ccc: res.data.data[0].cId
         })
       }
     })
@@ -198,44 +90,67 @@ Page({
 
     //7天天气信息
     var that = this
+    var tempSevenWeather=[{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://99c56y.natappfree.cc/getweather7?locationId=' + that.data.ccc,
+        url: 'http://k74s98.natappfree.cc/getweather7?locationId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
-          that.sevenWeather = res.data.data
-          that.currentTemperature = Math.round((parseInt(res.data.data[0].tempMax) + parseInt(res.data.data[0].tempMin)) / 2)
-          that.weather = res.data.data[0].textDay
+          for(let i=0;i<7;i++)
+          {
+            tempSevenWeather[i].id=res.data.data[i].id
+            tempSevenWeather[i].date=res.data.data[i].date
+            tempSevenWeather[i].tempMax=res.data.data[i].tempMax
+            tempSevenWeather[i].tempMin=res.data.data[i].tempMin
+            tempSevenWeather[i].textDay=res.data.data[i].textDay
+            tempSevenWeather[i].useimage="../../image/tb/"+res.data.data[i].iconDay+".png"
+            tempSevenWeather[i].percent=res.data.data[i].tempMax - res.data.data[i].tempMin
+          }
+          console.log(tempSevenWeather)
           that.setData({
-            sevenWeather: that.sevenWeather,
-            currentTemperature: that.currentTemperature,
-            weather: that.weather
+            sevenWeather:tempSevenWeather
           })
         },
       })
     }, 4000)
     //24小时天气信息
+    var temp24=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://99c56y.natappfree.cc/getweather24?localId=' + that.data.ccc,
+        url: 'http://k74s98.natappfree.cc/getweather24?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
-          that.twenty_four = res.data.data
-          that.comfortPercentage = res.data.data[0].humidity
+          let comfortPercentage = res.data.data[0].humidity,
+          currentTemperature=res.data.data[0].temp,
+          weather = res.data.data[0].text,
+          airMass =res.data.data[0].windDir,
+          weatherIcon="../../image/128/"+res.data.data[0].icon+".png"
+          for(let i=0;i<24;i++){
+              temp24[i].id=res.data.data[i].id
+              temp24[i].fxTime=res.data.data[i].time
+              temp24[i].text=res.data.data[i].text
+              temp24[i].temp=res.data.data[i].temp
+              temp24[i].useimage="../../image/tb/"+res.data.data[i].icon+".png"
+          }
+          console.log(temp24)
           that.setData({
-            twenty_four: that.twenty_four,
-            comfortPercentage: that.comfortPercentage
+            twenty_four:temp24,
+            comfortPercentage: comfortPercentage,
+            currentTemperature:currentTemperature,
+            weather: weather,
+            airMass:airMass,
+            weatherIcon:weatherIcon
+
           })
-          console.log(that.comfortPercentage)
         },
       })
     }, 2300)
     //体感指数
     setTimeout(function () {
       wx.request({
-        url: 'http://99c56y.natappfree.cc/getlife?localId=' + that.data.ccc,
+        url: 'http://k74s98.natappfree.cc/getlife?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)

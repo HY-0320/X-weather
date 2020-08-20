@@ -31,7 +31,7 @@ Page({
         that.setData({
           markers:[{
             id: 0,
-            iconPath: "../../image/定位点.png",
+            iconPath: "../../image/location.png",
             longitude:res.longitude ,
             latitude: res.latitude,
             width: 32,
@@ -66,7 +66,7 @@ Page({
       markers:[
         {
         id: 0,
-        iconPath: "../../image/定位点.png",
+        iconPath: "../../image/location.png",
         longitude:app.globalData.longitude ,
         latitude: app.globalData.latitude,
         width: 32,

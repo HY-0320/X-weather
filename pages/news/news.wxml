@@ -7,7 +7,7 @@
   	<!-- 固定区域 -->
   	<view class="mainTitle">
   		<view class="mainTitleStyle">
-  			<image class="weatherIcon" src="../../image/leiyu.png"></image>
+  			<image class="weatherIcon" src="{{weatherIcon}}"></image>
   		</view>
   		<view class="currentWeatherInformation">
   			<p class="temp">{{currentTemperature}}℃</p>
@@ -21,10 +21,10 @@
   	<view class="margin">
   		<scroll-view class="box_twentyFour" scroll-x="true">
   			<view wx:for="{{twenty_four}}" wx:for-item="items" wx:key="id" class="box-item">
-  				<text>{{items.time}}</text>
+  				<text class="pding3">{{items.fxTime}}</text>
   				<image class="weatherImage" src="{{items.useimage}}"></image>
-  				<text>{{items.text}}</text>
-  				<text>{{items.temp}}℃</text>
+  				<text class="pding3">{{items.text}}</text>
+  				<text class="pding3">{{items.temp}}℃</text>
   			</view>
   		</scroll-view>
   	</view>
@@ -32,10 +32,12 @@
   	<view class="margin">
   		<scroll-view class="box" scroll-x="true">
   			<view wx:for="{{sevenWeather}}" wx:for-item="items" wx:key="id" class="box-item">
-  				<text>{{items.date}}</text>
-  				<text>{{items.textDay}}</text>
+  				<text class="pding3">{{items.date}}</text>
+  				<text class="pding3">{{items.textDay}}</text>
   				<image class="weatherImage" src="{{items.useimage}}"></image>
-  				<text>{{items.tempMax}}℃</text>
+  				<text >{{items.tempMax}}℃</text>
+            <progress class="progress" percent="{{items.percent}}" stroke-width="4" border-radius="2rpx"  active active-color='rgb(74, 150, 226)' active-mode="backwards"/>
+						<text class="wc">{{items.percent}}℃</text>
   				<text class="boxBottom">{{items.tempMin}}℃</text>
   			</view>
   		</scroll-view>
@@ -63,6 +65,6 @@
   	</view>
   </view>
 	<!-- 点击页面最底端按钮获取弹窗天气信息 -->
-  <mp-dialog title="test1" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
+  <mp-dialog title="温馨提示" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
   	<view>{{someTips}}</view>
   </mp-dialog>
