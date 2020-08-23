@@ -10,7 +10,7 @@
   			<image class="weatherIcon" src="{{weatherIcon}}"></image>
   		</view>
   		<view class="currentWeatherInformation">
-  			<p class="temp">{{currentTemperature}}℃</p>
+  			<p class="temp">{{currentTemperature}}</p>
   			<p class="weather">{{weather}}</p>
   			<p class="airMass">{{airMass}}</p>
   		</view>
@@ -58,11 +58,9 @@
   			</canvas>
   		</view>
   	</view>
-  	<view class="tipsBox">
-  		<view class="tips">
+
   			<button class="myButton" bindtap="getSomeTips">点击获得温馨提示</button>
-  		</view>
-  	</view>
+
   </view>
 	<!-- 点击页面最底端按钮获取弹窗天气信息 -->
   <mp-dialog title="温馨提示" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">

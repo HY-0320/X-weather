@@ -4,17 +4,179 @@ Page({
   data: {
     ccc: "",
     percent:"",
-    weatherIcon:"../../image/tb/0.png",
-    currentTemperature: "正在获取..",
-    weather: "",
+    weatherIcon:"../../image/loading.png",
+    currentTemperature: "",
+    weather: "加载中...",
     airMass: "",
     locals: "点击获取地址",
     startAngle: "5", //开始位置弧度
     airMassPercentage: "75",
     comfortPercentage: "25",
     diffAngle: "25", //完成进度弧度值,
-    twenty_four: [],
-    sevenWeather: [],
+    twenty_four: [
+      {
+        id:1,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:2,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:3,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:4,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:5,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:6,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:7,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:8,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:9,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:10,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:11,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      },
+      {
+        id:12,
+        fxTime:"N/A",
+        temp: "N/A",
+        text: "N/A",
+        useimage: "../../image/tb/999.png"
+        
+      }
+      
+    ],
+    sevenWeather: [
+      {
+        date: "N/A",
+        id: 1,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 2,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 3,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 4,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 5,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 6,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      },
+      {
+        date: "N/A",
+        id: 7,
+        percent: 50,
+        tempMax: "N/A",
+        tempMin: "N/A",
+        textDay: "N/A",
+         useimage: "../../image/tb/999.png"
+      }
+    ],
     arrayNum:[
       '0','1','2','3','4','5','6'
     ],
@@ -73,7 +235,7 @@ Page({
     //后端返回数据获取城市id
     var that = this
     wx.request({
-      url: 'http://k74s98.natappfree.cc/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
+      url: 'http://7a845w.natappfree.cc/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
       method: "GET",
       success: function (res) {
         console.log(res.data)
@@ -93,7 +255,7 @@ Page({
     var tempSevenWeather=[{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://k74s98.natappfree.cc/getweather7?locationId=' + that.data.ccc,
+        url: 'http://7a845w.natappfree.cc/getweather7?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
@@ -118,12 +280,12 @@ Page({
     var temp24=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://k74s98.natappfree.cc/getweather24?localId=' + that.data.ccc,
+        url: 'http://7a845w.natappfree.cc/getweather24?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
           let comfortPercentage = res.data.data[0].humidity,
-          currentTemperature=res.data.data[0].temp,
+          currentTemperature=res.data.data[0].temp+"℃",
           weather = res.data.data[0].text,
           airMass =res.data.data[0].windDir,
           weatherIcon="../../image/128/"+res.data.data[0].icon+".png"
@@ -150,7 +312,7 @@ Page({
     //体感指数
     setTimeout(function () {
       wx.request({
-        url: 'http://k74s98.natappfree.cc/getlife?localId=' + that.data.ccc,
+        url: 'http://7a845w.natappfree.cc/getlife?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
