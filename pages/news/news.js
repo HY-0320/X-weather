@@ -235,7 +235,7 @@ Page({
     //后端返回数据获取城市id
     var that = this
     wx.request({
-      url: 'http://7a845w.natappfree.cc/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
+      url: 'http://121.36.39.191:8081/getLocation?longitude=' + app.globalData.longitude + '&latitude=' + app.globalData.latitude,
       method: "GET",
       success: function (res) {
         console.log(res.data)
@@ -255,7 +255,7 @@ Page({
     var tempSevenWeather=[{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://7a845w.natappfree.cc/getweather7?localId=' + that.data.ccc,
+        url: 'http://121.36.39.191:8081/getweather7?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
@@ -280,7 +280,7 @@ Page({
     var temp24=[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]
     setTimeout(function () {
       wx.request({
-        url: 'http://7a845w.natappfree.cc/getweather24?localId=' + that.data.ccc,
+        url: 'http://121.36.39.191:8081/getweather24?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)
@@ -312,7 +312,7 @@ Page({
     //体感指数
     setTimeout(function () {
       wx.request({
-        url: 'http://7a845w.natappfree.cc/getlife?localId=' + that.data.ccc,
+        url: 'http://121.36.39.191:8081/getlife?localId=' + that.data.ccc,
         method: "GET",
         success: function (res) {
           console.log(res.data)

@@ -1,9 +1,10 @@
 {
   "name": "xn",
   "version": "1.0.0",
-  "description": "",
+  "description": "X-weather\r 前端：hy xyw\r 后端：tbc ml",
   "main": "app.js",
   "dependencies": {
+    "lin-ui": "^0.8.8",
     "miniprogram-sm-crypto": "^0.1.2"
   },
   "devDependencies": {},
@@ -11,5 +12,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HY-0320/X-weather.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HY-0320/X-weather/issues"
+  },
+  "homepage": "https://github.com/HY-0320/X-weather#readme"
 }
