@@ -62,6 +62,7 @@
   			<button class="myButton" bindtap="getSomeTips">点击获得温馨提示</button>
 
   </view>
+	<view>mytext</view>
 	<!-- 点击页面最底端按钮获取弹窗天气信息 -->
   <mp-dialog title="温馨提示" show="{{showDialog}}" bindbuttontap="tapDialogButton" buttons="{{oneButton}}">
   	<view>{{someTips}}</view>
